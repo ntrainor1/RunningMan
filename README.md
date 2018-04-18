@@ -4,20 +4,16 @@
 
 ### Project Description
 
-This program is designed to play games of blackjack with the user until the user decides to quit. A highscore .txt file also accompanies the program so that new players can see who is the leading blackjack player.
+This program is an interactive game in which the player assumes the role of a track runner who must balance between winning the race and not losing energy.
 
 ### Project Operation
 
-This program begins by asking for the user's name before beginning a new game of blackjack. This is the name that will be scored into the blackjackhighscores.txt file if he/she is able to beat the high score.
+This program begins by explaining to the player that they have 10 miles to run and 100 health points that will be deducted each time they choose to run. The player decides between running (by inputting the capital letter "Y") and resting (by inputting the capital letter "N"). Several checks are put in place so that if the player inputs an invalid value, they are returned to the original query until they put in a valid input (i.e. "Y" or "N").
 
-The game begins in earnest as a new header saying "NEW ROUND" appears for each round of blackjack.
+Running deducts a random amount of health points between 20 and 39 points and a random amount of distance between 2 and 5 miles, leaving open the possibility of running out of health before reaching the finish line without taking a rest.
 
-The newRound() method then evaluates and displays the player's and the dealer's hands to find blackjacks as well as who has the better score than the other and below 21. The dealer is also programmed to keep hitting cards until reaching at least 17 points, just as in proper blackjack.
-
-Once the cards run out in the deck, the program runs its evaluateDeck() method and its evaluateWinner() method to see who won the most rounds of blackjack.
-
-The program asks if the player wants to play again. If the player answers yes (the program looks at the first character of the answer for a response, i.e. if the player types in "yes," the program will still treat it as 'Y' or 'N' if the response is "no," an incorrect character will just cause the program to prompt the user again until a correct response is given), then a new game starts with reset scores. If the user answers no, then the program will say goodbye and evaluate whether the player's score beats out the high score, irrespective of whether the player actually beat the dealer. If the player did beat the high score, the player's username and score are displayed, broken off by a comma.
+Resting allows the player to regain 10 points of health, but they lose their leading position by one. If they fall to fourth place, they have no more rests and must complete the race. Messages appear throughout the program informing the player of their health, position, distance remaining, and whether or not they win or lose the game.
 
 ### Lessons Learned
 
-- FileReader only works for files in the src folder, neither outside the src folder nor inside a given package.
+- nextLine() allows for different inputs (numerical, character, or multiple character) preventing any runtime errors from the Scanner.
